@@ -12,6 +12,7 @@ window.onload = function() {
     
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     var tileSet;
+	var cursors;
 	
     function preload() {
         // Load an image and call it 'logo'.
@@ -25,6 +26,8 @@ window.onload = function() {
         
 		tileSet = game.add.tileSprite(0, 0, 800, 600, 'sky');
 		
+		cursors = game.input.keyboard.createCursorKeys();
+		
     }
     
     function update() {
@@ -35,6 +38,15 @@ window.onload = function() {
         // new trajectory.
         //bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, game.input.activePointer, 500, 500, 500 );
 		
+		if (cursors.left.isDown)
+		{
+			tileSet.tilePosition.x += 8;
+		}
+		else if (cursors.right.isDown)
+		{
+			tileSet.tilePosition.x -= 8;
+		}
+
 		
     }
 };
