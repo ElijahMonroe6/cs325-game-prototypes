@@ -53,6 +53,7 @@ window.onload = function() {
 			}
 		}
 		if(gameOver == false){
+			
 			for(var i = 0; i < lasers1.length; i++){
 				
 				lasers1[i].x += 7;
@@ -70,7 +71,7 @@ window.onload = function() {
 				
 				lasers2[i].x -= 7;
 				
-				if(lasers2[i].x >= 767 && lasers2[i].y + 8 >= player1.y && lasers1[i].y <= player1.y + 60){
+				if(lasers2[i].x <= 33  && lasers2[i].y + 8 >= player1.y && lasers2[i].y <= player1.y + 60){
 					
 					lasers1[lasers1.length] = lasers2[i];
 					lasers2.splice(i, 1);
@@ -111,6 +112,9 @@ window.onload = function() {
 				lasers2[lasers2.length] = game.add.sprite(player2.x - 33, player2.y + 26, 'laser');
 				
 			}
+			
+			tileSet.tilePosition.x += 8;
+			
 		}
 		
     }
