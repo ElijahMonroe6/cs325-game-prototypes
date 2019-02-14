@@ -10,14 +10,18 @@ window.onload = function() {
     // loading functions to reflect where you are putting the assets.
     // All loading functions will typically all be found inside "preload()".
     
+	
+
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     var tileSet;
 	var cursors;
+	var player;
 	
     function preload() {
         // Load an image and call it 'logo'.
         game.load.image( 'logo', 'assets/phaser.png' );
 		game.load.image('sky', 'assets/sky.png');
+		game.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
     }
     
     //var bouncy;
@@ -25,6 +29,7 @@ window.onload = function() {
     function create() {
         
 		tileSet = game.add.tileSprite(0, 0, 800, 600, 'sky');
+		player = game.add.sprite(100, 450, 'dude');
 		
 		cursors = game.input.keyboard.createCursorKeys();
 		
