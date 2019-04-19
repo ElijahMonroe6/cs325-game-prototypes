@@ -179,7 +179,7 @@ var HomingStarsV2 = {
         else if (!isGhost) {
             if (game.input.activePointer.isDown) {
                 this.bark();
-				score -= 10;
+				score = score - 10;
 
             }
 
