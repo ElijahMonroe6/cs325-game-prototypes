@@ -104,7 +104,8 @@ window.onload = function() {
 			}
 		});
 
-		if(key == Phaser.KeyCode.BACKSPACE){
+		console.log(key.keyCode);
+		if(key.keyCode == 8){
 	
 			console.log('backspace');
 			
